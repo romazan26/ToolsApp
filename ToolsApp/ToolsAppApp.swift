@@ -11,7 +11,7 @@ import SwiftUI
 struct ToolsAppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LadingView()
         }
     }
 }
