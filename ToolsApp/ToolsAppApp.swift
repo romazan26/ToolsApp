@@ -12,6 +12,7 @@ struct ToolsAppApp: App {
     var body: some Scene {
         WindowGroup {
             LadingView()
+                .colorScheme(.light)
         }
     }
 }
