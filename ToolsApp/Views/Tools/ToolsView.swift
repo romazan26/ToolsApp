@@ -30,7 +30,7 @@ struct ToolsView: View {
                         Spacer()
                         
                         Button {
-                            vm.isPresentAddToolView = true
+                            vm.presentAddToolView()
                         } label: {
                             Image(systemName: "plus")
                                 .foregroundStyle(.black)

@@ -10,35 +10,126 @@ import SwiftUI
 struct AddToolsView: View {
     @StateObject var vm: ToolsViewModel
     var body: some View {
-        VStack {
-            
-            HStack {
-                Spacer()
-                Text("New tool")
-                    .font(.system(size: 22))
-                Spacer()
-                Button {
-                    vm.isPresentAddToolView = false
-                } label: {
-                    Image(systemName: "xmark")
-                }
-
-            }.foregroundStyle(.black)
-            
-            VStack(alignment: .leading){
-                Text("Card icon")
-                ScrollView(.horizontal) {
-                        HStack {
-                        ForEach(Card.allCases, id: \.self) { card in
-                            CardCellView(image: card.image)
-                                .padding(9)
+        ZStack(alignment: .bottom) {
+            VStack(spacing: 15) {
+                
+                HStack {
+                    Spacer()
+                    Text("New tool")
+                        .font(.system(size: 22))
+                    Spacer()
+                    Button {
+                        vm.presentAddToolView()
+                    } label: {
+                        Image(systemName: "xmark")
+                    }
+                    
+                }.foregroundStyle(.black)
+                ScrollView {
+                    VStack(spacing: 15) {
+                        //MARK: - Card
+                        VStack(alignment: .leading){
+                            Text("Card icon")
+                            ScrollView(.horizontal) {
+                                HStack {
+                                    ForEach(Card.allCases, id: \.self) { card in
+                                        Button {
+                                            vm.simpleCard = card
+                                        } label: {
+                                            CardCellView(image: card.image, isActive: vm.cheakIsActiveCard(card: card))
+                                        } .padding(9)
+                                    }
+                                }
+                            }.scrollIndicators(.hidden)
+                        }
+                        
+                        //MARK: - Tool condition
+                        VStack(alignment: .leading){
+                            Text("Tool Condition")
+                            ScrollView(.horizontal) {
+                                HStack {
+                                    ForEach(Condition.allCases, id: \.self) { condition in
+                                        Button {
+                                            vm.simpleToolCondition = condition
+                                        } label: {
+                                            ConditionCellView(title: condition.name, isAcctive: vm.cheakIsActiveCondition(condition: condition))
+                                        }
+                                    }
+                                }
+                            }.scrollIndicators(.hidden)
+                        }
+                        
+                        //MARK: - Tool type
+                        VStack(alignment: .leading){
+                            Text("Tool Type")
+                            ScrollView(.horizontal) {
+                                HStack {
+                                    ForEach(TypeTools.allCases, id: \.self) { type in
+                                        Button {
+                                            vm.simpleType = type
+                                        } label: {
+                                            ConditionCellView(title: type.name, isAcctive: vm.cheatIsActiveType(type: type))
+                                        }
+                                    }
+                                }
+                            }.scrollIndicators(.hidden)
+                        }
+                        
+                        //MARK: - Other type
+                        TextField("Or write another type", text: $vm.simpleAnotherType)
+                        
+                        Divider()
+                        
+                        //MARK: - Tool name
+                        VStack(alignment: .leading){
+                            Text("Tool Name")
+                            TextField("Write tool name", text: $vm.simpleToolName)
+                        }
+                        
+                        Divider()
+                        
+                        //MARK: - Manafacturere
+                        VStack(alignment: .leading){
+                            Text("Manafacturer")
+                            TextField("Enter manafacturer name", text: $vm.simpleToolManufactures)
+                        }
+                        
+                        Divider()
+                        
+                        //MARK: - Price
+                        VStack(alignment: .leading){
+                            Text("Price")
+                            TextField("Enter price", text: $vm.simpleToolPrice)
+                        }
+                        
+                        Divider()
+                        
+                        //MARK: - Manual
+                        VStack(alignment: .leading){
+                            Text("Manual (optional)")
+                            ZStack(alignment: .topLeading) {
+                                TextEditor(text: $vm.simpleToolManual)
+                                if vm.simpleToolManual.isEmpty {
+                                    Text("Write manual")
+                                        .foregroundStyle(.gray)
+                                        .padding(.horizontal, 8)
+                                        .padding(.vertical, 12)
+                                }
+                            }
                         }
                     }
                 }
+                Spacer()
+                
             }
-            
-            Spacer()
-        }.padding()
+            Button {
+                ///
+            } label: {
+                MainButtonView(text: "Save and add")
+                
+            }
+        }
+        .padding()
     }
 }
 
