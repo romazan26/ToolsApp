@@ -12,11 +12,12 @@ struct ConditionCellView: View {
     var isAcctive: Bool = false
     var body: some View {
         Text(title)
+            .padding(.horizontal)
             .foregroundStyle(isAcctive ? .white : .black)
             .padding(8)
             .background {
                 Color(isAcctive ? .main : .grayApp)
-                    .cornerRadius(100)
+                    .cornerRadius(50)
             }
     }
 }

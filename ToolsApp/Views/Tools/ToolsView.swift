@@ -12,13 +12,37 @@ struct ToolsView: View {
     var body: some View {
         NavigationStack {
                 //MARK: - Main stack
-                VStack {
+            VStack(spacing: 20) {
                     //MARK: - Tags
-                    HStack {
+                    Divider()
+                    HStack{
                         Button {
-                            ///
+                            vm.presentesTagsView()
                         } label: {
-                            TagButtonView(text: "Tags", image: "slider.horizontal.3", isActive: false)
+                            TagButtonView(text: "Tags", image: "slider.horizontal.3", isActive: !vm.typeTags.isEmpty || !vm.coditionTags.isEmpty ? true : false)
+                                .padding(.top, 10)
+                        }
+                        ScrollView(.horizontal) {
+                            HStack{
+                                
+                                ForEach(vm.typeTags, id: \.self) { tag in
+                                    Button {
+                                        vm.deleteTypeTags(tag: tag)
+                                    } label: {
+                                        TagButtonView(text: tag, isActive: false, delete: true)
+                                            .padding(.top, 10)
+                                    }
+                                }
+                                
+                                ForEach(vm.coditionTags, id: \.self) { tag in
+                                    Button {
+                                        vm.deleteConditionTags(tag: tag)
+                                    } label: {
+                                        TagButtonView(text: tag, isActive: false, delete: true)
+                                            .padding(.top, 10)
+                                    }
+                                }
+                            }
                         }
                         Spacer()
                     }
@@ -37,6 +61,21 @@ struct ToolsView: View {
                         }
                         
                     }
+                    if vm.tools.isEmpty {
+                        EmptyDataTools()
+                    }else{
+                        ScrollView {
+                            ForEach(vm.tools) { tool in
+                                Button {
+                                    vm.simpleTool = tool
+                                    vm.feelData()
+                                    vm.presentedToolView()
+                                } label: {
+                                    ToolCellView(tool: tool, vm: vm)
+                                }
+                            }
+                        }
+                    }
                     Spacer()
                 }
                 .padding()
@@ -44,6 +83,16 @@ struct ToolsView: View {
                 .sheet(isPresented: $vm.isPresentAddToolView) {
                     AddToolsView(vm: vm)
                         .presentationDetents([.fraction(0.75)])
+                        .presentationDragIndicator(.visible)
+                }
+                .sheet(isPresented: $vm.isPresentToolView) {
+                    ToolView(vm: vm)
+                        .presentationDetents([.fraction(0.75)])
+                        .presentationDragIndicator(.visible)
+                }
+                .sheet(isPresented: $vm.isPresentTagsView) {
+                    TagsView(vm: vm)
+                        .presentationDetents([.fraction(0.4)])
                         .presentationDragIndicator(.visible)
                 }
         }

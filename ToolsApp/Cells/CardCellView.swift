@@ -18,7 +18,7 @@ struct CardCellView: View {
                 .resizable()
                 .frame(width: 32, height: 32)
                 .padding()
-                .foregroundStyle(isActive ? .accent : .black)
+                .foregroundStyle(isActive ? .main : .black)
         }.frame(width: 48, height: 48)
     }
 }

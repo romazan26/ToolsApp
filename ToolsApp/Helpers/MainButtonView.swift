@@ -12,7 +12,7 @@ struct MainButtonView: View {
     var isactive: Bool = true
     var body: some View {
         ZStack {
-            Color(isactive ? .accent : .grayApp)
+            Color(isactive ? .main : .grayApp)
                 .frame(height: 36)
                 .cornerRadius(100)
             Text(text)

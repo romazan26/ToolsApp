@@ -8,29 +8,40 @@
 import Foundation
 import SwiftUI
 
+
 struct TagButtonView: View {
     var text: String
     var image: String = ""
     var isActive: Bool = true
+    var delete = false
     var body: some View {
-        HStack {
-            Text(text)
-                .foregroundStyle(isActive ? .white : .black)
-                .padding(.horizontal)
-            if image != "" {
-                Image(systemName: image)
+        ZStack(alignment: .topTrailing) {
+            HStack {
+                Text(text)
+                    .foregroundStyle(isActive ? .white : .black)
+                    .padding(.horizontal)
+                if image != "" {
+                    Image(systemName: image)
+                        .resizable()
+                        .frame(width: 20, height: 20)
+                        .foregroundStyle(isActive ? .white : .black)
+                } 
+            }
+            .padding(8)
+            .background {
+                Color(isActive ? .main : .grayApp)
+                    .cornerRadius(100)
+            }
+            if delete{
+                Image(systemName: "xmark.circle.fill")
                     .resizable()
                     .frame(width: 20, height: 20)
-                    .foregroundStyle(isActive ? .white : .black)
-            } 
-        }
-        .padding()
-        .background {
-            Color(isActive ? .accent : .grayApp)
-                .cornerRadius(100)
+                    .offset(x: 5, y: -5)
+                    .foregroundStyle(.main)
+            }
         }
     }
 }
 #Preview {
-    TagButtonView(text: "Tags", image: "")
+    TagButtonView(text: "Tags", image: "", isActive: false, delete: true)
 }

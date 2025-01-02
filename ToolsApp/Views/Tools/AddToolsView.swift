@@ -15,7 +15,7 @@ struct AddToolsView: View {
                 
                 HStack {
                     Spacer()
-                    Text("New tool")
+                    Text(vm.isEditeMode ? "Edit tool" : "New tool")
                         .font(.system(size: 22))
                     Spacer()
                     Button {
@@ -123,9 +123,14 @@ struct AddToolsView: View {
                 
             }
             Button {
-                ///
+                if vm.isEditeMode{
+                    vm.tapSaveEdite()
+                }else{
+                    vm.addData()
+                    vm.presentAddToolView()
+                }
             } label: {
-                MainButtonView(text: "Save and add")
+                MainButtonView(text: vm.isEditeMode ? "Save and close" : "Save and add")
                 
             }
         }
