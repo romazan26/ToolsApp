@@ -12,6 +12,7 @@ final class ToolsViewModel: ObservableObject {
     let manager = CoreDataManager.instance
     
     @Published var tools: [Tool] = []
+    @Published var sortesTools: [Tool] = []
     @Published var simpleTool: Tool?
     
     @Published var isPresentAddToolView: Bool = false
@@ -34,6 +35,21 @@ final class ToolsViewModel: ObservableObject {
     
     init(){
         getData()
+        getSortTools()
+    }
+    
+    //MARK: - Sorted function
+    func getSortTools(){
+        sortesTools.removeAll()
+        if coditionTags.isEmpty && typeTags.isEmpty{
+            sortesTools = tools
+        }else{
+            for tool in tools{
+                if coditionTags.contains(tool.condition ?? "") || typeTags.contains(tool.type ?? ""){
+                    sortesTools.append(tool)
+                }
+            }
+        }
     }
     
     //MARK: - Make tags
@@ -170,6 +186,7 @@ final class ToolsViewModel: ObservableObject {
         }
         saveData()
         clearData()
+        getSortTools()
     }
     
     func addData(){
@@ -185,6 +202,7 @@ final class ToolsViewModel: ObservableObject {
         
         saveData()
         clearData()
+        getSortTools()
     }
     
     func clearData(){

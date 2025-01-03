@@ -21,6 +21,7 @@ struct TagsView: View {
                     vm.presentesTagsView()
                     vm.addTypeAll()
                     vm.addConitionAll()
+                    vm.getSortTools()
                 } label: {
                     Image(systemName: "xmark")
                         .foregroundStyle(.black)
@@ -87,6 +88,7 @@ struct TagsView: View {
                 }
                 Button {
                     vm.presentesTagsView()
+                    vm.getSortTools()
                 } label: {
                     ZStack {
                         Color(.grayApp)

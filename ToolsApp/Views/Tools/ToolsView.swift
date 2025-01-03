@@ -28,6 +28,7 @@ struct ToolsView: View {
                                 ForEach(vm.typeTags, id: \.self) { tag in
                                     Button {
                                         vm.deleteTypeTags(tag: tag)
+                                        vm.getSortTools()
                                     } label: {
                                         TagButtonView(text: tag, isActive: false, delete: true)
                                             .padding(.top, 10)
@@ -37,6 +38,7 @@ struct ToolsView: View {
                                 ForEach(vm.coditionTags, id: \.self) { tag in
                                     Button {
                                         vm.deleteConditionTags(tag: tag)
+                                        vm.getSortTools()
                                     } label: {
                                         TagButtonView(text: tag, isActive: false, delete: true)
                                             .padding(.top, 10)
@@ -61,11 +63,13 @@ struct ToolsView: View {
                         }
                         
                     }
+                
+                    //MARK: - Tools list
                     if vm.tools.isEmpty {
                         EmptyDataTools()
                     }else{
                         ScrollView {
-                            ForEach(vm.tools) { tool in
+                            ForEach(vm.sortesTools) { tool in
                                 Button {
                                     vm.simpleTool = tool
                                     vm.feelData()
