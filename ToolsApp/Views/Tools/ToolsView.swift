@@ -10,7 +10,6 @@ import SwiftUI
 struct ToolsView: View {
     @StateObject var vm = ToolsViewModel()
     var body: some View {
-        NavigationStack {
                 //MARK: - Main stack
             VStack(spacing: 20) {
                     //MARK: - Tags
@@ -99,7 +98,7 @@ struct ToolsView: View {
                         .presentationDetents([.fraction(0.4)])
                         .presentationDragIndicator(.visible)
                 }
-        }
+        
     }
 }
 
