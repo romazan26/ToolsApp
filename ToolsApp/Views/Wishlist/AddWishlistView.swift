@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AddWishlistView: View {
     @StateObject var vm: WishlistViewModel
+    @FocusState var isFocused: Bool
     var body: some View {
         VStack{
             HStack{
@@ -32,6 +33,7 @@ struct AddWishlistView: View {
                     .font(.system(size: 12))
                 TextField("Enter tool name", text: $vm.toolName)
                     .textFieldStyle(.roundedBorder)
+                    .focused($isFocused)
             }
             
             Divider()
@@ -41,6 +43,7 @@ struct AddWishlistView: View {
                     .font(.system(size: 12))
                 TextField("Enter tool type", text: $vm.toolType)
                     .textFieldStyle(.roundedBorder)
+                    .focused($isFocused)
             }
             
             Divider()
@@ -58,6 +61,9 @@ struct AddWishlistView: View {
                 MainButtonView(text: "Save and add", isactive: !vm.toolName.isEmpty)
             }
             .disabled(vm.toolName.isEmpty)
+        }
+        .onTapGesture {
+            isFocused = false
         }
         .padding()
         .foregroundStyle(.black)

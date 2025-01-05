@@ -13,6 +13,7 @@ final class PlainingViewModel: ObservableObject {
     @Published var isPresentAddPlaining: Bool = false
     @Published var isPresentPlanView: Bool = false
     @Published var isPresentEditPlan: Bool = false
+    @Published var isPresentShare = false
     
     @Published var plainngs: [Plan] = []
     @Published var simplePlan: Plan?

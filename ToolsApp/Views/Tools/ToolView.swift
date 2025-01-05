@@ -31,7 +31,7 @@ struct ToolView: View {
                     Button {vm.tapEditeButton()} label: {
                         Label("Edit", systemImage: "square.and.pencil")
                     }
-                    Button {} label: {
+                    Button {vm.isPresentShare.toggle()} label: {
                         Label("Share", systemImage: "square.and.arrow.up")
                     }
                     Button(role: .destructive, action: {
@@ -67,6 +67,9 @@ struct ToolView: View {
             Spacer()
         }
         .padding()
+        .sheet(isPresented: $vm.isPresentShare, content: {
+            ShareSheet(items: vm.simpleTool?.name ?? "" )
+        })
         .alert("Delete tool?", isPresented: $presentDeleteAlert) {
                         Button("Cancel", role: .cancel) {
                             presentDeleteAlert = false

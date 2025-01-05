@@ -33,7 +33,7 @@ struct PlanView: View {
                     } label: {
                         Label("Edit", systemImage: "square.and.pencil")
                     }
-                    Button {} label: {
+                    Button {vm.isPresentShare.toggle()} label: {
                         Label("Share", systemImage: "square.and.arrow.up")
                     }
                     Button(role: .destructive, action: {
@@ -133,6 +133,9 @@ struct PlanView: View {
             }
         }
         .padding()
+        .sheet(isPresented: $vm.isPresentShare, content: {
+            ShareSheet(items: vm.simplePlan?.name ?? "" )
+        })
         .alert("Delete plan?", isPresented: $presentDeleteAlert) {
                         Button("Cancel", role: .cancel) {
                             presentDeleteAlert = false

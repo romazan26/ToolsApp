@@ -75,9 +75,10 @@ struct ToolsView: View {
                         ScrollView {
                             ForEach(vm.sortesTools) { tool in
                                 Button {
+                                    vm.presentedToolView()
                                     vm.simpleTool = tool
                                     vm.feelData()
-                                    vm.presentedToolView()
+                                    
                                 } label: {
                                     ToolCellView(tool: tool, vm: vm)
                                 }

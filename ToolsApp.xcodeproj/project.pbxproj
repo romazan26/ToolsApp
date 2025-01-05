@@ -3,20 +3,101 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 60;
 	objects = {
+
+/* Begin PBXBuildFile section */
+		30C6B3AA2D2B165A00A46F34 /* CardCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B36E2D2B165A00A46F34 /* CardCellView.swift */; };
+		30C6B3AB2D2B165A00A46F34 /* ConditionCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B36F2D2B165A00A46F34 /* ConditionCellView.swift */; };
+		30C6B3AC2D2B165A00A46F34 /* PlanCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B3702D2B165A00A46F34 /* PlanCellView.swift */; };
+		30C6B3AD2D2B165A00A46F34 /* ToolCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B3712D2B165A00A46F34 /* ToolCellView.swift */; };
+		30C6B3AE2D2B165A00A46F34 /* WishListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B3722D2B165A00A46F34 /* WishListCellView.swift */; };
+		30C6B3AF2D2B165A00A46F34 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B3742D2B165A00A46F34 /* CoreDataManager.swift */; };
+		30C6B3B02D2B165A00A46F34 /* ToolsAppData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B3752D2B165A00A46F34 /* ToolsAppData.xcdatamodeld */; };
+		30C6B3B12D2B165A00A46F34 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B3772D2B165A00A46F34 /* Card.swift */; };
+		30C6B3B22D2B165A00A46F34 /* Condition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B3782D2B165A00A46F34 /* Condition.swift */; };
+		30C6B3B32D2B165A00A46F34 /* PlanType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B3792D2B165A00A46F34 /* PlanType.swift */; };
+		30C6B3B42D2B165A00A46F34 /* TypeTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B37A2D2B165A00A46F34 /* TypeTools.swift */; };
+		30C6B3B52D2B165A00A46F34 /* ConditionBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B37C2D2B165A00A46F34 /* ConditionBar.swift */; };
+		30C6B3B62D2B165A00A46F34 /* EmptyDataTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B37D2D2B165A00A46F34 /* EmptyDataTools.swift */; };
+		30C6B3B72D2B165A00A46F34 /* MainButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B37E2D2B165A00A46F34 /* MainButtonView.swift */; };
+		30C6B3B82D2B165A00A46F34 /* SettingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B37F2D2B165A00A46F34 /* SettingButton.swift */; };
+		30C6B3B92D2B165A00A46F34 /* TagButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B3802D2B165A00A46F34 /* TagButtonView.swift */; };
+		30C6B3BA2D2B165A00A46F34 /* ToolsGridDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B3812D2B165A00A46F34 /* ToolsGridDataView.swift */; };
+		30C6B3BB2D2B165A00A46F34 /* LoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B3852D2B165A00A46F34 /* LoadingViewModel.swift */; };
+		30C6B3BC2D2B165A00A46F34 /* PlainingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B3862D2B165A00A46F34 /* PlainingViewModel.swift */; };
+		30C6B3BD2D2B165A00A46F34 /* ToolsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B3872D2B165A00A46F34 /* ToolsViewModel.swift */; };
+		30C6B3BE2D2B165A00A46F34 /* WishlistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B3882D2B165A00A46F34 /* WishlistViewModel.swift */; };
+		30C6B3BF2D2B165A00A46F34 /* LadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B38A2D2B165A00A46F34 /* LadingView.swift */; };
+		30C6B3C02D2B165A00A46F34 /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B38C2D2B165A00A46F34 /* IntroView.swift */; };
+		30C6B3C12D2B165A00A46F34 /* PageIntroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B38D2D2B165A00A46F34 /* PageIntroModel.swift */; };
+		30C6B3C22D2B165A00A46F34 /* PageIntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B38E2D2B165A00A46F34 /* PageIntroView.swift */; };
+		30C6B3C32D2B165A00A46F34 /* AddPlainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B3902D2B165A00A46F34 /* AddPlainingView.swift */; };
+		30C6B3C42D2B165A00A46F34 /* EditPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B3912D2B165A00A46F34 /* EditPlanView.swift */; };
+		30C6B3C52D2B165A00A46F34 /* PlanningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B3922D2B165A00A46F34 /* PlanningView.swift */; };
+		30C6B3C62D2B165A00A46F34 /* PlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B3932D2B165A00A46F34 /* PlanView.swift */; };
+		30C6B3C72D2B165A00A46F34 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B3952D2B165A00A46F34 /* RootView.swift */; };
+		30C6B3C82D2B165A00A46F34 /* webView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B3972D2B165A00A46F34 /* webView.swift */; };
+		30C6B3C92D2B165A00A46F34 /* WebViewPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B3982D2B165A00A46F34 /* WebViewPage.swift */; };
+		30C6B3CA2D2B165A00A46F34 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B39A2D2B165A00A46F34 /* SettingsView.swift */; };
+		30C6B3CB2D2B165A00A46F34 /* AddToolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B39C2D2B165A00A46F34 /* AddToolsView.swift */; };
+		30C6B3CC2D2B165A00A46F34 /* TagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B39D2D2B165A00A46F34 /* TagsView.swift */; };
+		30C6B3CD2D2B165A00A46F34 /* ToolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B39E2D2B165A00A46F34 /* ToolsView.swift */; };
+		30C6B3CE2D2B165A00A46F34 /* ToolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B39F2D2B165A00A46F34 /* ToolView.swift */; };
+		30C6B3CF2D2B165A00A46F34 /* AddWishlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B3A12D2B165A00A46F34 /* AddWishlistView.swift */; };
+		30C6B3D02D2B165A00A46F34 /* WishlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B3A22D2B165A00A46F34 /* WishlistView.swift */; };
+		30C6B3D12D2B165A00A46F34 /* WishLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B3A32D2B165A00A46F34 /* WishLView.swift */; };
+		30C6B3D22D2B165A00A46F34 /* ToolsAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B3A72D2B165A00A46F34 /* ToolsAppApp.swift */; };
+		30C6B3D32D2B165A00A46F34 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30C6B3832D2B165A00A46F34 /* Preview Assets.xcassets */; };
+		30C6B3D42D2B165A00A46F34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30C6B3A62D2B165A00A46F34 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		30969BFF2D2310CF00ACBBF5 /* ToolsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToolsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		30C6B36E2D2B165A00A46F34 /* CardCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCellView.swift; sourceTree = "<group>"; };
+		30C6B36F2D2B165A00A46F34 /* ConditionCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionCellView.swift; sourceTree = "<group>"; };
+		30C6B3702D2B165A00A46F34 /* PlanCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanCellView.swift; sourceTree = "<group>"; };
+		30C6B3712D2B165A00A46F34 /* ToolCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolCellView.swift; sourceTree = "<group>"; };
+		30C6B3722D2B165A00A46F34 /* WishListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListCellView.swift; sourceTree = "<group>"; };
+		30C6B3742D2B165A00A46F34 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		30C6B3772D2B165A00A46F34 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		30C6B3782D2B165A00A46F34 /* Condition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Condition.swift; sourceTree = "<group>"; };
+		30C6B3792D2B165A00A46F34 /* PlanType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanType.swift; sourceTree = "<group>"; };
+		30C6B37A2D2B165A00A46F34 /* TypeTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeTools.swift; sourceTree = "<group>"; };
+		30C6B37C2D2B165A00A46F34 /* ConditionBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionBar.swift; sourceTree = "<group>"; };
+		30C6B37D2D2B165A00A46F34 /* EmptyDataTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyDataTools.swift; sourceTree = "<group>"; };
+		30C6B37E2D2B165A00A46F34 /* MainButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButtonView.swift; sourceTree = "<group>"; };
+		30C6B37F2D2B165A00A46F34 /* SettingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingButton.swift; sourceTree = "<group>"; };
+		30C6B3802D2B165A00A46F34 /* TagButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagButtonView.swift; sourceTree = "<group>"; };
+		30C6B3812D2B165A00A46F34 /* ToolsGridDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsGridDataView.swift; sourceTree = "<group>"; };
+		30C6B3832D2B165A00A46F34 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		30C6B3852D2B165A00A46F34 /* LoadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewModel.swift; sourceTree = "<group>"; };
+		30C6B3862D2B165A00A46F34 /* PlainingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainingViewModel.swift; sourceTree = "<group>"; };
+		30C6B3872D2B165A00A46F34 /* ToolsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsViewModel.swift; sourceTree = "<group>"; };
+		30C6B3882D2B165A00A46F34 /* WishlistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistViewModel.swift; sourceTree = "<group>"; };
+		30C6B38A2D2B165A00A46F34 /* LadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LadingView.swift; sourceTree = "<group>"; };
+		30C6B38C2D2B165A00A46F34 /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
+		30C6B38D2D2B165A00A46F34 /* PageIntroModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageIntroModel.swift; sourceTree = "<group>"; };
+		30C6B38E2D2B165A00A46F34 /* PageIntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageIntroView.swift; sourceTree = "<group>"; };
+		30C6B3902D2B165A00A46F34 /* AddPlainingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlainingView.swift; sourceTree = "<group>"; };
+		30C6B3912D2B165A00A46F34 /* EditPlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPlanView.swift; sourceTree = "<group>"; };
+		30C6B3922D2B165A00A46F34 /* PlanningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanningView.swift; sourceTree = "<group>"; };
+		30C6B3932D2B165A00A46F34 /* PlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanView.swift; sourceTree = "<group>"; };
+		30C6B3952D2B165A00A46F34 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		30C6B3972D2B165A00A46F34 /* webView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = webView.swift; sourceTree = "<group>"; };
+		30C6B3982D2B165A00A46F34 /* WebViewPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewPage.swift; sourceTree = "<group>"; };
+		30C6B39A2D2B165A00A46F34 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		30C6B39C2D2B165A00A46F34 /* AddToolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToolsView.swift; sourceTree = "<group>"; };
+		30C6B39D2D2B165A00A46F34 /* TagsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsView.swift; sourceTree = "<group>"; };
+		30C6B39E2D2B165A00A46F34 /* ToolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsView.swift; sourceTree = "<group>"; };
+		30C6B39F2D2B165A00A46F34 /* ToolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolView.swift; sourceTree = "<group>"; };
+		30C6B3A12D2B165A00A46F34 /* AddWishlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWishlistView.swift; sourceTree = "<group>"; };
+		30C6B3A22D2B165A00A46F34 /* WishlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistView.swift; sourceTree = "<group>"; };
+		30C6B3A32D2B165A00A46F34 /* WishLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishLView.swift; sourceTree = "<group>"; };
+		30C6B3A62D2B165A00A46F34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		30C6B3A72D2B165A00A46F34 /* ToolsAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsAppApp.swift; sourceTree = "<group>"; };
+		30C6B3A92D2B165A00A46F34 /* ToolsAppData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToolsAppData.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		30969C012D2310CF00ACBBF5 /* ToolsApp */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = ToolsApp;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		30969BFC2D2310CF00ACBBF5 /* Frameworks */ = {
@@ -32,7 +113,7 @@
 		30969BF62D2310CF00ACBBF5 = {
 			isa = PBXGroup;
 			children = (
-				30969C012D2310CF00ACBBF5 /* ToolsApp */,
+				30C6B3A82D2B165A00A46F34 /* ToolsApp */,
 				30969C002D2310CF00ACBBF5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +124,176 @@
 				30969BFF2D2310CF00ACBBF5 /* ToolsApp.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		30C6B3732D2B165A00A46F34 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				30C6B36E2D2B165A00A46F34 /* CardCellView.swift */,
+				30C6B36F2D2B165A00A46F34 /* ConditionCellView.swift */,
+				30C6B3702D2B165A00A46F34 /* PlanCellView.swift */,
+				30C6B3712D2B165A00A46F34 /* ToolCellView.swift */,
+				30C6B3722D2B165A00A46F34 /* WishListCellView.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		30C6B3762D2B165A00A46F34 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				30C6B3742D2B165A00A46F34 /* CoreDataManager.swift */,
+				30C6B3752D2B165A00A46F34 /* ToolsAppData.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		30C6B37B2D2B165A00A46F34 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				30C6B3772D2B165A00A46F34 /* Card.swift */,
+				30C6B3782D2B165A00A46F34 /* Condition.swift */,
+				30C6B3792D2B165A00A46F34 /* PlanType.swift */,
+				30C6B37A2D2B165A00A46F34 /* TypeTools.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		30C6B3822D2B165A00A46F34 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				30C6B37C2D2B165A00A46F34 /* ConditionBar.swift */,
+				30C6B37D2D2B165A00A46F34 /* EmptyDataTools.swift */,
+				30C6B37E2D2B165A00A46F34 /* MainButtonView.swift */,
+				30C6B37F2D2B165A00A46F34 /* SettingButton.swift */,
+				30C6B3802D2B165A00A46F34 /* TagButtonView.swift */,
+				30C6B3812D2B165A00A46F34 /* ToolsGridDataView.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		30C6B3842D2B165A00A46F34 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				30C6B3832D2B165A00A46F34 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		30C6B3892D2B165A00A46F34 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				30C6B3852D2B165A00A46F34 /* LoadingViewModel.swift */,
+				30C6B3862D2B165A00A46F34 /* PlainingViewModel.swift */,
+				30C6B3872D2B165A00A46F34 /* ToolsViewModel.swift */,
+				30C6B3882D2B165A00A46F34 /* WishlistViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		30C6B38B2D2B165A00A46F34 /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				30C6B38A2D2B165A00A46F34 /* LadingView.swift */,
+			);
+			path = Loading;
+			sourceTree = "<group>";
+		};
+		30C6B38F2D2B165A00A46F34 /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				30C6B38C2D2B165A00A46F34 /* IntroView.swift */,
+				30C6B38D2D2B165A00A46F34 /* PageIntroModel.swift */,
+				30C6B38E2D2B165A00A46F34 /* PageIntroView.swift */,
+			);
+			path = OnBoarding;
+			sourceTree = "<group>";
+		};
+		30C6B3942D2B165A00A46F34 /* Planning */ = {
+			isa = PBXGroup;
+			children = (
+				30C6B3902D2B165A00A46F34 /* AddPlainingView.swift */,
+				30C6B3912D2B165A00A46F34 /* EditPlanView.swift */,
+				30C6B3922D2B165A00A46F34 /* PlanningView.swift */,
+				30C6B3932D2B165A00A46F34 /* PlanView.swift */,
+			);
+			path = Planning;
+			sourceTree = "<group>";
+		};
+		30C6B3962D2B165A00A46F34 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				30C6B3952D2B165A00A46F34 /* RootView.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		30C6B3992D2B165A00A46F34 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				30C6B3972D2B165A00A46F34 /* webView.swift */,
+				30C6B3982D2B165A00A46F34 /* WebViewPage.swift */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
+		30C6B39B2D2B165A00A46F34 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				30C6B3992D2B165A00A46F34 /* WebView */,
+				30C6B39A2D2B165A00A46F34 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		30C6B3A02D2B165A00A46F34 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				30C6B39C2D2B165A00A46F34 /* AddToolsView.swift */,
+				30C6B39D2D2B165A00A46F34 /* TagsView.swift */,
+				30C6B39E2D2B165A00A46F34 /* ToolsView.swift */,
+				30C6B39F2D2B165A00A46F34 /* ToolView.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		30C6B3A42D2B165A00A46F34 /* Wishlist */ = {
+			isa = PBXGroup;
+			children = (
+				30C6B3A12D2B165A00A46F34 /* AddWishlistView.swift */,
+				30C6B3A22D2B165A00A46F34 /* WishlistView.swift */,
+				30C6B3A32D2B165A00A46F34 /* WishLView.swift */,
+			);
+			path = Wishlist;
+			sourceTree = "<group>";
+		};
+		30C6B3A52D2B165A00A46F34 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				30C6B38B2D2B165A00A46F34 /* Loading */,
+				30C6B38F2D2B165A00A46F34 /* OnBoarding */,
+				30C6B3942D2B165A00A46F34 /* Planning */,
+				30C6B3962D2B165A00A46F34 /* Root */,
+				30C6B39B2D2B165A00A46F34 /* Settings */,
+				30C6B3A02D2B165A00A46F34 /* Tools */,
+				30C6B3A42D2B165A00A46F34 /* Wishlist */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		30C6B3A82D2B165A00A46F34 /* ToolsApp */ = {
+			isa = PBXGroup;
+			children = (
+				30C6B3732D2B165A00A46F34 /* Cells */,
+				30C6B3762D2B165A00A46F34 /* CoreData */,
+				30C6B37B2D2B165A00A46F34 /* Enums */,
+				30C6B3822D2B165A00A46F34 /* Helpers */,
+				30C6B3842D2B165A00A46F34 /* Preview Content */,
+				30C6B3892D2B165A00A46F34 /* ViewModels */,
+				30C6B3A52D2B165A00A46F34 /* Views */,
+				30C6B3A62D2B165A00A46F34 /* Assets.xcassets */,
+				30C6B3A72D2B165A00A46F34 /* ToolsAppApp.swift */,
+			);
+			path = ToolsApp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,9 +310,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				30969C012D2310CF00ACBBF5 /* ToolsApp */,
 			);
 			name = ToolsApp;
 			packageProductDependencies = (
@@ -86,6 +334,7 @@
 				};
 			};
 			buildConfigurationList = 30969BFA2D2310CF00ACBBF5 /* Build configuration list for PBXProject "ToolsApp" */;
+			compatibilityVersion = "Xcode 15.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -93,8 +342,6 @@
 				Base,
 			);
 			mainGroup = 30969BF62D2310CF00ACBBF5;
-			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
 			productRefGroup = 30969C002D2310CF00ACBBF5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -109,6 +356,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30C6B3D32D2B165A00A46F34 /* Preview Assets.xcassets in Resources */,
+				30C6B3D42D2B165A00A46F34 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +368,47 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30C6B3AA2D2B165A00A46F34 /* CardCellView.swift in Sources */,
+				30C6B3AB2D2B165A00A46F34 /* ConditionCellView.swift in Sources */,
+				30C6B3AC2D2B165A00A46F34 /* PlanCellView.swift in Sources */,
+				30C6B3AD2D2B165A00A46F34 /* ToolCellView.swift in Sources */,
+				30C6B3AE2D2B165A00A46F34 /* WishListCellView.swift in Sources */,
+				30C6B3AF2D2B165A00A46F34 /* CoreDataManager.swift in Sources */,
+				30C6B3B02D2B165A00A46F34 /* ToolsAppData.xcdatamodeld in Sources */,
+				30C6B3B12D2B165A00A46F34 /* Card.swift in Sources */,
+				30C6B3B22D2B165A00A46F34 /* Condition.swift in Sources */,
+				30C6B3B32D2B165A00A46F34 /* PlanType.swift in Sources */,
+				30C6B3B42D2B165A00A46F34 /* TypeTools.swift in Sources */,
+				30C6B3B52D2B165A00A46F34 /* ConditionBar.swift in Sources */,
+				30C6B3B62D2B165A00A46F34 /* EmptyDataTools.swift in Sources */,
+				30C6B3B72D2B165A00A46F34 /* MainButtonView.swift in Sources */,
+				30C6B3B82D2B165A00A46F34 /* SettingButton.swift in Sources */,
+				30C6B3B92D2B165A00A46F34 /* TagButtonView.swift in Sources */,
+				30C6B3BA2D2B165A00A46F34 /* ToolsGridDataView.swift in Sources */,
+				30C6B3BB2D2B165A00A46F34 /* LoadingViewModel.swift in Sources */,
+				30C6B3BC2D2B165A00A46F34 /* PlainingViewModel.swift in Sources */,
+				30C6B3BD2D2B165A00A46F34 /* ToolsViewModel.swift in Sources */,
+				30C6B3BE2D2B165A00A46F34 /* WishlistViewModel.swift in Sources */,
+				30C6B3BF2D2B165A00A46F34 /* LadingView.swift in Sources */,
+				30C6B3C02D2B165A00A46F34 /* IntroView.swift in Sources */,
+				30C6B3C12D2B165A00A46F34 /* PageIntroModel.swift in Sources */,
+				30C6B3C22D2B165A00A46F34 /* PageIntroView.swift in Sources */,
+				30C6B3C32D2B165A00A46F34 /* AddPlainingView.swift in Sources */,
+				30C6B3C42D2B165A00A46F34 /* EditPlanView.swift in Sources */,
+				30C6B3C52D2B165A00A46F34 /* PlanningView.swift in Sources */,
+				30C6B3C62D2B165A00A46F34 /* PlanView.swift in Sources */,
+				30C6B3C72D2B165A00A46F34 /* RootView.swift in Sources */,
+				30C6B3C82D2B165A00A46F34 /* webView.swift in Sources */,
+				30C6B3C92D2B165A00A46F34 /* WebViewPage.swift in Sources */,
+				30C6B3CA2D2B165A00A46F34 /* SettingsView.swift in Sources */,
+				30C6B3CB2D2B165A00A46F34 /* AddToolsView.swift in Sources */,
+				30C6B3CC2D2B165A00A46F34 /* TagsView.swift in Sources */,
+				30C6B3CD2D2B165A00A46F34 /* ToolsView.swift in Sources */,
+				30C6B3CE2D2B165A00A46F34 /* ToolView.swift in Sources */,
+				30C6B3CF2D2B165A00A46F34 /* AddWishlistView.swift in Sources */,
+				30C6B3D02D2B165A00A46F34 /* WishlistView.swift in Sources */,
+				30C6B3D12D2B165A00A46F34 /* WishLView.swift in Sources */,
+				30C6B3D22D2B165A00A46F34 /* ToolsAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,7 +544,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ToolsApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = ToolsApp;
+				INFOPLIST_KEY_CFBundleDisplayName = ToolNest;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -288,7 +578,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ToolsApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = ToolsApp;
+				INFOPLIST_KEY_CFBundleDisplayName = ToolNest;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -334,6 +624,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		30C6B3752D2B165A00A46F34 /* ToolsAppData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				30C6B3A92D2B165A00A46F34 /* ToolsAppData.xcdatamodel */,
+			);
+			currentVersion = 30C6B3A92D2B165A00A46F34 /* ToolsAppData.xcdatamodel */;
+			path = ToolsAppData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 30969BF72D2310CF00ACBBF5 /* Project object */;
 }

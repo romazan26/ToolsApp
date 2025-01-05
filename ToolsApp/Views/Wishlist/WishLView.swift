@@ -35,7 +35,7 @@ struct WishLView: View {
                     Button {vm.tapEditButon()} label: {
                         Label("Edit", systemImage: "square.and.pencil")
                     }
-                    Button {} label: {
+                    Button {vm.isPresentShare.toggle()} label: {
                         Label("Share", systemImage: "square.and.arrow.up")
                     }
                     Button(role: .destructive, action: {
@@ -68,6 +68,9 @@ struct WishLView: View {
 
         }
         .padding()
+        .sheet(isPresented: $vm.isPresentShare, content: {
+            ShareSheet(items: vm.simpleWishlist?.name ?? "" )
+        })
         .alert("Delete tool?", isPresented: $presentDeleteAlert) {
                         Button("Cancel", role: .cancel) {
                             presentDeleteAlert = false

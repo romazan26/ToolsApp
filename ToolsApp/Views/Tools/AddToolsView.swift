@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AddToolsView: View {
     @StateObject var vm: ToolsViewModel
+    @FocusState var isFocused: Bool
     var body: some View {
         ZStack(alignment: .bottom) {
             VStack(spacing: 15) {
@@ -77,6 +78,7 @@ struct AddToolsView: View {
                         
                         //MARK: - Other type
                         TextField("Or write another type", text: $vm.simpleAnotherType)
+                            .focused($isFocused)
                         
                         Divider()
                         
@@ -84,6 +86,7 @@ struct AddToolsView: View {
                         VStack(alignment: .leading){
                             Text("Tool Name")
                             TextField("Write tool name", text: $vm.simpleToolName)
+                                .focused($isFocused)
                         }
                         
                         Divider()
@@ -92,6 +95,7 @@ struct AddToolsView: View {
                         VStack(alignment: .leading){
                             Text("Manafacturer")
                             TextField("Enter manafacturer name", text: $vm.simpleToolManufactures)
+                                .focused($isFocused)
                         }
                         
                         Divider()
@@ -100,6 +104,7 @@ struct AddToolsView: View {
                         VStack(alignment: .leading){
                             Text("Price")
                             TextField("Enter price", text: $vm.simpleToolPrice)
+                                .focused($isFocused)
                         }
                         
                         Divider()
@@ -109,6 +114,7 @@ struct AddToolsView: View {
                             Text("Manual (optional)")
                             ZStack(alignment: .topLeading) {
                                 TextEditor(text: $vm.simpleToolManual)
+                                    .focused($isFocused)
                                 if vm.simpleToolManual.isEmpty {
                                     Text("Write manual")
                                         .foregroundStyle(.gray)
@@ -121,6 +127,9 @@ struct AddToolsView: View {
                 }
                 Spacer()
                 
+            }
+            .onTapGesture {
+                isFocused = false
             }
             Button {
                 if vm.isEditeMode{

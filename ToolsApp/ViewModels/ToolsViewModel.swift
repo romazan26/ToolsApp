@@ -18,6 +18,7 @@ final class ToolsViewModel: ObservableObject {
     @Published var isPresentAddToolView: Bool = false
     @Published var isPresentToolView: Bool = false
     @Published var isPresentTagsView: Bool = false
+    @Published var isPresentShare = false
     
     @Published var simpleToolName: String = ""
     @Published var simpleToolManufactures: String = ""
@@ -99,6 +100,7 @@ final class ToolsViewModel: ObservableObject {
         isPresentAddToolView.toggle()
     }
     func presentedToolView() {
+        clearData() 
         isPresentToolView.toggle()
     }
     func presentesTagsView() {

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AddPlainingView: View {
     @StateObject var vm: PlainingViewModel
+    @FocusState var isFocused: Bool
     var body: some View {
         ZStack(alignment: .bottom) {
             
@@ -55,6 +56,7 @@ struct AddPlainingView: View {
                             .foregroundStyle(.black)
                             .font(.system(size: 12))
                         TextField("Enter plan name", text: $vm.simplePlanName)
+                            .focused($isFocused)
                     }
                     .padding(.top)
                     
@@ -69,6 +71,7 @@ struct AddPlainingView: View {
                         HStack{
                             TextField("Tool", text: $vm.simplePowerTool)
                                 .textFieldStyle(.roundedBorder)
+                                .focused($isFocused)
                             Spacer()
                             //MARK: Add power tool button
                             Button {
@@ -85,6 +88,7 @@ struct AddPlainingView: View {
                                 HStack {
                                     TextField("", text: $vm.simplePowerTools[index])
                                         .textFieldStyle(.roundedBorder)
+                                        .focused($isFocused)
                                     Button {
                                         vm.deletePowerTools(index: index)
                                     } label: {
@@ -109,6 +113,7 @@ struct AddPlainingView: View {
                         HStack{
                             TextField("Tool", text: $vm.simpleHandTool)
                                 .textFieldStyle(.roundedBorder)
+                                .focused($isFocused)
                             Spacer()
                             
                             //MARK: Add hand tool button
@@ -126,6 +131,7 @@ struct AddPlainingView: View {
                                 HStack {
                                     TextField("", text: $vm.simpleHandTools[index])
                                         .textFieldStyle(.roundedBorder)
+                                        .focused($isFocused)
                                     Button {
                                         vm.deleteHandTools(index: index)
                                     } label: {
@@ -150,6 +156,7 @@ struct AddPlainingView: View {
                         HStack{
                             TextField("Worker", text: $vm.simpleWorker)
                                 .textFieldStyle(.roundedBorder)
+                                .focused($isFocused)
                             Spacer()
                             
                             //MARK: Add worker button
@@ -167,6 +174,7 @@ struct AddPlainingView: View {
                                 HStack {
                                     TextField("", text: $vm.simpleWorkers[index])
                                         .textFieldStyle(.roundedBorder)
+                                        .focused($isFocused)
                                     Button {
                                         vm.deleteWorkers(index: index)
                                     } label: {
@@ -185,6 +193,9 @@ struct AddPlainingView: View {
                     
                     
                 }
+            }
+            .onTapGesture {
+                isFocused = false
             }
             
             //MARK: - Save button

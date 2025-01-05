@@ -16,6 +16,7 @@ final class WishlistViewModel: ObservableObject {
     
     @Published var isPresentAddView: Bool = false
     @Published var isPresentWishLView: Bool = false
+    @Published var isPresentShare = false
     
     @Published var isEditMode = false
     
