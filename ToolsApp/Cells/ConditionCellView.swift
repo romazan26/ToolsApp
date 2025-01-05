@@ -13,6 +13,7 @@ struct ConditionCellView: View {
     var body: some View {
         Text(title)
             .padding(.horizontal)
+            .font(.system(size: 12))
             .foregroundStyle(isAcctive ? .white : .black)
             .padding(8)
             .background {

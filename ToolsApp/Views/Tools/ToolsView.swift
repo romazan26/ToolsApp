@@ -12,6 +12,11 @@ struct ToolsView: View {
     var body: some View {
                 //MARK: - Main stack
             VStack(spacing: 20) {
+                HStack{
+                    Text("Tools")
+                        .font(.system(size: 32))
+                    Spacer()
+                }
                     //MARK: - Tags
                     Divider()
                     HStack{

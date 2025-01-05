@@ -131,8 +131,9 @@ struct AddToolsView: View {
                 }
             } label: {
                 MainButtonView(text: vm.isEditeMode ? "Save and close" : "Save and add")
+                    .opacity(vm.simpleToolName.isEmpty ? 0.5 : 1)
                 
-            }
+            }.disabled(vm.simpleToolName.isEmpty)
         }
         .padding()
     }

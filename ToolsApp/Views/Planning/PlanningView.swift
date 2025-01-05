@@ -13,6 +13,11 @@ struct PlanningView: View {
     
     var body: some View {
         VStack{
+            HStack{
+                Text("Planning")
+                    .font(.system(size: 32))
+                Spacer()
+            }
             Divider()
             //MARK: - Add button
             HStack{
@@ -39,18 +44,32 @@ struct PlanningView: View {
             }else{
                 ScrollView {
                     ForEach(vm.plainngs) { plan in
-                        PlanCellView(plan: plan, vm: vm)
+                        Button {
+                            vm.presentPlanView()
+                            vm.simplePlan = plan
+                        } label: {
+                            PlanCellView(plan: plan, vm: vm)
+                        }
+
+                        
                     }
                 }
             }
-            
             Spacer()
-            
-                .navigationTitle("Planning")
         }
         .padding()
         .sheet(isPresented: $vm.isPresentAddPlaining) {
             AddPlainingView(vm: vm)
+                .presentationDetents([.fraction(0.75)])
+                .presentationDragIndicator(.visible)
+        }
+        .sheet(isPresented: $vm.isPresentPlanView) {
+            PlanView(vm: vm)
+                .presentationDetents([.fraction(0.75)])
+                .presentationDragIndicator(.visible)
+        }
+        .sheet(isPresented: $vm.isPresentEditPlan) {
+            EditPlanView(vm: vm)
                 .presentationDetents([.fraction(0.75)])
                 .presentationDragIndicator(.visible)
         }

@@ -16,34 +16,51 @@ struct PlanCellView: View {
                 .font(.system(size: 22))
                 .foregroundStyle(.black)
             
-            ConditionCellView(title: plan.type ?? "")
+            ConditionCellView(title: plan.type ?? "",isAcctive: true)
             
             if let powers = plan.power?.allObjects as? [PowerTool]{
                 HStack{
                     Text("Power tools: ")
-                    Text("\(powers.count)")
+                    Text("\(vm.getCompletedPowerTools(powerTools: powers))/\(powers.count)")
                 }
+                .foregroundStyle(.black)
+                .opacity(vm.getStatusPlan(plan: plan) ? 0.5 : 1)
             }
             
             if let hands = plan.hand?.allObjects as? [HandTool]{
                 HStack{
                     Text("Hand tools: ")
-                    Text("\(hands.count)")
+                    Text("\(vm.getCompletedHandTools(handTools: hands))/\(hands.count)")
                 }
+                .foregroundStyle(.black)
+                .opacity(vm.getStatusPlan(plan: plan) ? 0.5 : 1)
             }
              
             if let workers = plan.worker?.allObjects as? [Worker]{
                 HStack{
                     Text("Workers: ")
-                    Text("\(workers.count)")
+                    Text("\(vm.getCompletedWorkers(workers: workers))/\(workers.count)")
                 }
+                .foregroundStyle(.black)
+                .opacity(vm.getStatusPlan(plan: plan) ? 0.5 : 1)
             }
             HStack{
                 Spacer()
-                Text("In progress")
+                Text(vm.getStatusPlan(plan: plan) ? "Done" : "In progress")
+                    .foregroundStyle(vm.getStatusPlan(plan: plan) ? .white : .black)
+                    .padding(8)
+                    .background {
+                        Color(vm.getStatusPlan(plan: plan) ? .green : .gray)
+                            .cornerRadius(20)
+                    }
             }
             
-        }.padding()
+        }
+        .padding()
+        .background {
+            Color(vm.getStatusPlan(plan: plan) ? .donePlan : .grayApp)
+                .cornerRadius(20)
+        }
     }
 }
 
