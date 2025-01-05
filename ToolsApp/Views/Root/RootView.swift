@@ -29,14 +29,14 @@ struct RootView: View {
                     .tabItem {
                         VStack{
                             Image(systemName: "pencil.and.list.clipboard")
-                            Text("Planning")
+                            Text("Wishlist")
                         }
                     }
                 SettingsView()
                     .tabItem {
                         VStack{
                             Image(systemName: "gearshape.fill")
-                            Text("Planning")
+                            Text("Settings")
                         }
                     }
             }
