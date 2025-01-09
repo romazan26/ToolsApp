@@ -25,7 +25,10 @@ struct PlanningView: View {
                     .foregroundStyle(.black)
                     .font(.system(size: 22))
                 Spacer()
-                Button(action: {vm.presentAddPlaining()}) {
+                Button(action: {
+                    vm.clearData()
+                    vm.presentAddPlaining()}
+                ) {
                     Image(systemName: "plus")
                         .foregroundColor(.black)
                 }
@@ -73,6 +76,16 @@ struct PlanningView: View {
                 .presentationDetents([.fraction(0.75)])
                 .presentationDragIndicator(.visible)
         }
+        .alert("Delete plan?", isPresented: $vm.isPresentAlertDelete) {
+                        Button("Cancel", role: .cancel) {
+                            vm.isPresentAlertDelete = false
+                        }
+                        Button("Delete", role: .destructive) {
+                            vm.deletePlan()
+                        }
+                    } message: {
+                        Text("Are you sure you want to delete this plan? This action cannot be undone.")
+                    }
     }
 }
 

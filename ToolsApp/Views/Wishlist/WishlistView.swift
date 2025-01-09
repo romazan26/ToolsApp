@@ -51,7 +51,7 @@ struct WishlistView: View {
                             vm.presentWishLView()
                             vm.simpleWishlist = wishlist
                         } label: {
-                            WishListCellView(wishList: wishlist)
+                            WishListCellView(wishList: wishlist, vm: vm)
                         }
                     }
                 }
@@ -70,6 +70,16 @@ struct WishlistView: View {
                 .presentationDetents([.fraction(0.35)])
                 .presentationDragIndicator(.visible)
         }
+        .alert("Delete tool?", isPresented: $vm.isPresentAlertDelete) {
+                        Button("Cancel", role: .cancel) {
+                            vm.isPresentAlertDelete = false
+                        }
+                        Button("Delete", role: .destructive) {
+                            vm.deleteList()
+                        }
+                    } message: {
+                        Text("Are you sure you want to delete this tool? This action cannot be undone.")
+                    }
     }
 }
 

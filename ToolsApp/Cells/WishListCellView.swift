@@ -9,6 +9,7 @@ import SwiftUI
 
 struct WishListCellView: View {
     @ObservedObject var wishList: WishList
+    @StateObject var vm: WishlistViewModel
     var body: some View {
         VStack(alignment: .leading){
             HStack{
@@ -17,8 +18,37 @@ struct WishListCellView: View {
                     .font(.system(size: 22))
                 Spacer()
             }
-           
-            ConditionCellView(title: wishList.type ?? "", isAcctive: true)
+            HStack{
+                ConditionCellView(title: wishList.type ?? "", isAcctive: true)
+                Spacer()
+                
+                //MARK: Edit button
+                Button {
+                    vm.tapEditButtonOnCell(wishList: wishList)
+                } label: {
+                    Image(systemName: "pencil.line")
+                        .foregroundStyle(.black)
+                }
+
+                //MARK: - Completed button
+                Button {
+                    vm.simpleWishlist = wishList
+                    vm.confirmList()
+                } label: {
+                    Image(systemName: "checkmark.circle")
+                        .foregroundStyle(.green)
+                }
+
+                
+                //MARK: Delete button
+                Button {
+                    vm.simpleWishlist = wishList
+                    vm.isPresentAlertDelete = true
+                } label: {
+                    Image(systemName: "trash.fill")
+                        .foregroundStyle(.main)
+                }
+            }
         }
         .padding()
         .background {
@@ -29,5 +59,5 @@ struct WishListCellView: View {
 }
 
 #Preview {
-    WishListCellView(wishList: WishList())
+    WishListCellView(wishList: WishList(), vm: WishlistViewModel())
 }

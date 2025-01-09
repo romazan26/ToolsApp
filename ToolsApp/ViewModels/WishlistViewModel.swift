@@ -17,6 +17,7 @@ final class WishlistViewModel: ObservableObject {
     @Published var isPresentAddView: Bool = false
     @Published var isPresentWishLView: Bool = false
     @Published var isPresentShare = false
+    @Published var isPresentAlertDelete = false
     
     @Published var isEditMode = false
     
@@ -43,6 +44,15 @@ final class WishlistViewModel: ObservableObject {
     }
     
     //MARK: - Edit mode
+    
+    func tapEditButtonOnCell(wishList: WishList){
+            presentAddView()
+            isEditMode = true
+            simpleWishlist = wishList
+            toolName = wishList.name ?? ""
+            toolType = wishList.type ?? ""
+    }
+    
     func tapEditButon(){
         presentAddView()
         if let wishList = simpleWishlist{

@@ -12,37 +12,63 @@ struct PlanCellView: View {
     @StateObject var vm: PlainingViewModel
     var body: some View {
         VStack(alignment: .leading){
-            Text(plan.name ?? "")
-                .font(.system(size: 22))
-                .foregroundStyle(.black)
-            
-            ConditionCellView(title: plan.type ?? "",isAcctive: true)
-            
-            if let powers = plan.power?.allObjects as? [PowerTool]{
-                HStack{
-                    Text("Power tools: ")
-                    Text("\(vm.getCompletedPowerTools(powerTools: powers))/\(powers.count)")
+            HStack{
+                VStack(alignment: .leading){
+                Text(plan.name ?? "")
+                    .font(.system(size: 22))
+                    .foregroundStyle(.black)
+                
+                ConditionCellView(title: plan.type ?? "",isAcctive: true)
+                
+                if let powers = plan.power?.allObjects as? [PowerTool]{
+                    HStack{
+                        Text("Power tools: ")
+                        Text("\(vm.getCompletedPowerTools(powerTools: powers))/\(powers.count)")
+                    }
+                    .foregroundStyle(.black)
+                    .opacity(vm.getStatusPlan(plan: plan) ? 0.5 : 1)
                 }
-                .foregroundStyle(.black)
-                .opacity(vm.getStatusPlan(plan: plan) ? 0.5 : 1)
+                
+                if let hands = plan.hand?.allObjects as? [HandTool]{
+                    HStack{
+                        Text("Hand tools: ")
+                        Text("\(vm.getCompletedHandTools(handTools: hands))/\(hands.count)")
+                    }
+                    .foregroundStyle(.black)
+                    .opacity(vm.getStatusPlan(plan: plan) ? 0.5 : 1)
+                }
+                
+                if let workers = plan.worker?.allObjects as? [Worker]{
+                    HStack{
+                        Text("Workers: ")
+                        Text("\(vm.getCompletedWorkers(workers: workers))/\(workers.count)")
+                    }
+                    .foregroundStyle(.black)
+                    .opacity(vm.getStatusPlan(plan: plan) ? 0.5 : 1)
+                }
             }
-            
-            if let hands = plan.hand?.allObjects as? [HandTool]{
-                HStack{
-                    Text("Hand tools: ")
-                    Text("\(vm.getCompletedHandTools(handTools: hands))/\(hands.count)")
+                Spacer()
+                //MARK: - New button
+                VStack(spacing: 20){
+                    
+                    //MARK: Edit button
+                    Button {
+                        vm.tapEditButtonOnCell(plan: plan)
+                    } label: {
+                        Image(systemName: "pencil.line")
+                            .foregroundStyle(.black)
+                    }
+                    
+                    
+                    //MARK: Delete button
+                    Button {
+                        vm.simplePlan = plan
+                        vm.isPresentAlertDelete = true
+                    } label: {
+                        Image(systemName: "trash.fill")
+                            .foregroundStyle(.main)
+                    }
                 }
-                .foregroundStyle(.black)
-                .opacity(vm.getStatusPlan(plan: plan) ? 0.5 : 1)
-            }
-             
-            if let workers = plan.worker?.allObjects as? [Worker]{
-                HStack{
-                    Text("Workers: ")
-                    Text("\(vm.getCompletedWorkers(workers: workers))/\(workers.count)")
-                }
-                .foregroundStyle(.black)
-                .opacity(vm.getStatusPlan(plan: plan) ? 0.5 : 1)
             }
             HStack{
                 Spacer()

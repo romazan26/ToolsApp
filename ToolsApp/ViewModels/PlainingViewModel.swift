@@ -14,6 +14,7 @@ final class PlainingViewModel: ObservableObject {
     @Published var isPresentPlanView: Bool = false
     @Published var isPresentEditPlan: Bool = false
     @Published var isPresentShare = false
+    @Published var isPresentAlertDelete = false
     
     @Published var plainngs: [Plan] = []
     @Published var simplePlan: Plan?
@@ -32,6 +33,14 @@ final class PlainingViewModel: ObservableObject {
     }
     
     //MARK: - Edit func
+    func tapEditButtonOnCell(plan: Plan){
+        simplePlan = plan
+        simplePlanType = getTypePlan(type: plan.type ?? "")
+        simplePlanName = plan.name ?? ""
+        presentEditPlanView()
+        
+    }
+    
     func tapEditButton(){
         if let plan = simplePlan{
             simplePlanType = getTypePlan(type: plan.type ?? "")
@@ -165,7 +174,7 @@ final class PlainingViewModel: ObservableObject {
         }
         
         saveData()
-        presentPlanView()
+        isPresentPlanView = false
     }
     
     func addData(){

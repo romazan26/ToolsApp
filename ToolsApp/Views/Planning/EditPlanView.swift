@@ -272,10 +272,7 @@ struct EditPlanView: View {
                             
                         }
                         
-                        Divider()
-                        
-                        
-                        
+                        Divider()    
                     }
                 }
                 
