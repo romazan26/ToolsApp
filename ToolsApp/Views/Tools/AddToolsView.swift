@@ -21,6 +21,7 @@ struct AddToolsView: View {
                     Spacer()
                     Button {
                         vm.presentAddToolView()
+                        vm.clearData()
                     } label: {
                         Image(systemName: "xmark")
                     }

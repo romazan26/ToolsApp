@@ -61,6 +61,7 @@ struct ToolsView: View {
                         
                         Button {
                             vm.presentAddToolView()
+                            vm.clearData()
                         } label: {
                             Image(systemName: "plus")
                                 .foregroundStyle(.black)
@@ -104,6 +105,18 @@ struct ToolsView: View {
                         .presentationDetents([.fraction(0.4)])
                         .presentationDragIndicator(.visible)
                 }
+                .alert("Delete tool?", isPresented: $vm.isPresentAlertDelete) {
+                                Button("Cancel", role: .cancel) {
+                                    vm.isPresentAlertDelete = false
+                                    vm.clearData()
+                                }
+                                Button("Delete", role: .destructive) {
+                                    vm.deleteData()
+                                    
+                                }
+                            } message: {
+                                Text("Are you sure you want to delete this tool? This action cannot be undone.")
+                            }
         
     }
 }

@@ -16,3 +16,10 @@ struct ToolsAppApp: App {
         }
     }
 }
+
+
+//аккаунт - nutuk.alay@icloud.com
+//
+//пароль - Cihan1946
+//
+//bundle id -  com.nut.t00ln3st

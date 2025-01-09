@@ -43,6 +43,25 @@ struct ToolCellView: View {
                 Text("$\(String(format: "%.2f", tool.price))")
                     .foregroundStyle(.black)
                 Spacer()
+                
+                //MARK: Edit button
+                Button {
+                    vm.tapEditButtonOnCell(tool: tool)
+                } label: {
+                    Image(systemName: "pencil.line")
+                        .foregroundStyle(.black)
+                }
+
+                
+                //MARK: Delete button
+                Button {
+                    vm.simpleTool = tool
+                    vm.isPresentAlertDelete = true
+                } label: {
+                    Image(systemName: "trash.fill")
+                        .foregroundStyle(.main)
+                }
+
                     
             }
             

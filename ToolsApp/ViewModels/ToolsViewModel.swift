@@ -19,6 +19,7 @@ final class ToolsViewModel: ObservableObject {
     @Published var isPresentToolView: Bool = false
     @Published var isPresentTagsView: Bool = false
     @Published var isPresentShare = false
+    @Published var isPresentAlertDelete = false
     
     @Published var simpleToolName: String = ""
     @Published var simpleToolManufactures: String = ""
@@ -100,7 +101,6 @@ final class ToolsViewModel: ObservableObject {
         isPresentAddToolView.toggle()
     }
     func presentedToolView() {
-        clearData() 
         isPresentToolView.toggle()
     }
     func presentesTagsView() {
@@ -108,10 +108,17 @@ final class ToolsViewModel: ObservableObject {
     }
     
     //MARK: - Tap button
-    func tapEditeButton(){
+    func tapEditButtonOnCell(tool: Tool){
         isEditeMode = true
+        simpleTool = tool
+        feelData()
+        presentAddToolView()
+    }
+    
+    func tapEditeButton(){
         presentedToolView()
         presentAddToolView()
+        isEditeMode = true
     }
     
     func tapSaveEdite(){
@@ -182,6 +189,8 @@ final class ToolsViewModel: ObservableObject {
         }
     }
     
+ 
+    
     func deleteData(){
         if let tool = simpleTool{
             manager.context.delete(tool)
@@ -216,6 +225,7 @@ final class ToolsViewModel: ObservableObject {
         simpleToolCondition = .new
         simpleType = .hand
         simpleAnotherType = ""
+        isEditeMode = false
     }
     
     func getData(){
